@@ -9,25 +9,20 @@ import { expertise } from './content/expertise'
 import { experience, education } from './content/experience'
 import { projects } from './content/projects'
 import { socials } from './content/socials'
-import { getNotes, postNote as saveSharedNote, guestbookReady } from './lib/guestbook'
 import { sendMessage, inboxReady } from './lib/formspree'
+import { GiscusWidget } from './components/GiscusWidget'
 
 const navItems = ['about', 'expertise', 'projects', 'experience', 'contact'] as const
 type SectionId = (typeof navItems)[number]
-type Note = { id: string; name: string; note: string; created_at: string }
 type FormStatus = 'idle' | 'sending' | 'success' | 'error'
 
 function App() {
   const { t, i18n } = useTranslation()
   const reduceMotion = useReducedMotion()
-  const [language, setLanguage] = useState(i18n.language.startsWith('fr') ? 'fr' : 'en')
+  const [language, setLanguage] = useState<'en' | 'fr'>(i18n.language.startsWith('fr') ? 'fr' : 'en')
   const [activeSection, setActiveSection] = useState<SectionId>('about')
   const [menuOpen, setMenuOpen] = useState(false)
   const [showTop, setShowTop] = useState(false)
-  const [contactTab, setContactTab] = useState<'note' | 'inbox'>('note')
-  const [notes, setNotes] = useState<Note[]>([])
-  const [notesLoading, setNotesLoading] = useState(true)
-  const [guestbookStatus, setGuestbookStatus] = useState<FormStatus>('idle')
   const [inboxStatus, setInboxStatus] = useState<FormStatus>('idle')
 
   useEffect(() => {
@@ -43,57 +38,11 @@ function App() {
     return () => window.removeEventListener('scroll', update)
   }, [])
 
-  useEffect(() => {
-    let alive = true
-    if (!guestbookReady) {
-      setNotesLoading(false)
-      return () => { alive = false }
-    }
-    void getNotes()
-      .then((data) => {
-        if (!alive) return
-        if (data) setNotes(data)
-        setNotesLoading(false)
-      })
-    return () => { alive = false }
-  }, [])
-
   const changeLanguage = (next: 'en' | 'fr') => {
     void i18n.changeLanguage(next)
     localStorage.setItem('lang', next)
     document.documentElement.lang = next
     setLanguage(next)
-  }
-
-  const submitNote = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    const form = event.currentTarget
-    const values = new FormData(form)
-    if (String(values.get('website') ?? '').trim()) return
-    const name = String(values.get('name') ?? '').trim().slice(0, 40)
-    const note = String(values.get('note') ?? '').trim().slice(0, 280)
-    if (!guestbookReady || !name || !note) {
-      setGuestbookStatus('error')
-      return
-    }
-    const lastPosted = Number(localStorage.getItem('guestbook-last-post') ?? 0)
-    if (Date.now() - lastPosted < 30000) {
-      setGuestbookStatus('error')
-      return
-    }
-    const optimistic: Note = { id: `local-${Date.now()}`, name, note, created_at: new Date().toISOString() }
-    setNotes((previous) => [optimistic, ...previous])
-    setGuestbookStatus('sending')
-    const savedNote = await saveSharedNote(name, note)
-    if (!savedNote) {
-      setNotes((previous) => previous.filter((item) => item.id !== optimistic.id))
-      setGuestbookStatus('error')
-      return
-    }
-    localStorage.setItem('guestbook-last-post', String(Date.now()))
-    setNotes((previous) => previous.map((item) => item.id === optimistic.id ? savedNote : item))
-    setGuestbookStatus('success')
-    form.reset()
   }
 
   const submitInbox = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -180,9 +129,8 @@ function App() {
         <section id="contact" className="section wrap" aria-labelledby="contact-title">
           <motion.div {...reveal}><SectionHeader number="05" label={t('nav.contact')} title={t('contact.title')} /><p className="section-subtitle">{t('contact.subtitle')}</p></motion.div>
           <div className="contact-grid">
-            <motion.div className="guestbook hard-card" {...reveal}><div className="guestbook-head"><span>◉ {t('contact.guestbook')} — {notes.length} {t('contact.notes')}</span><i title={guestbookReady ? t('contact.connected') : t('contact.setupRequired')} /></div><div className="notes-list" aria-live="polite">{notesLoading ? <p className="service-message">{t('contact.loading')}</p> : !guestbookReady ? <p className="service-message">{t('contact.setupRequired')}</p> : notes.length === 0 ? <p className="service-message">{t('contact.noNotes')}</p> : notes.map((note, index) => <article key={note.id} className={`note-row note-${index % 4}`}><span className="note-avatar">{note.name.slice(0, 2).toUpperCase()}</span><div className="note-bubble"><b>{note.name}</b><p>{note.note}</p><time>{new Intl.DateTimeFormat(language, { dateStyle: 'medium' }).format(new Date(note.created_at))}</time></div></article>)}</div></motion.div>
-            <motion.div className="contact-panel hard-card" {...reveal}><div className="contact-tabs" role="tablist" aria-label={t('contact.tabs')}><button role="tab" id="tab-note" aria-selected={contactTab === 'note'} aria-controls="panel-note" onClick={() => setContactTab('note')}>✍ {t('contact.leaveNote')}</button><button role="tab" id="tab-inbox" aria-selected={contactTab === 'inbox'} aria-controls="panel-inbox" onClick={() => setContactTab('inbox')}>▣ {t('contact.directInbox')}</button></div>
-              {contactTab === 'note' ? <form id="panel-note" role="tabpanel" aria-labelledby="tab-note" className="contact-form" onSubmit={submitNote}><label>{t('contact.name')} *<input name="name" required maxLength={40} autoComplete="name" placeholder={t('contact.namePlaceholder')} /></label><label>{t('contact.note')} *<textarea name="note" required maxLength={280} rows={4} placeholder={t('contact.notePlaceholder')} /></label><label className="honeypot" aria-hidden="true">Website<input name="website" tabIndex={-1} autoComplete="off" /></label><button className="button button-dark submit-button" disabled={!guestbookReady || guestbookStatus === 'sending'}>{guestbookStatus === 'sending' ? t('contact.posting') : `✺ ${t('contact.postNote')}`}</button>{!guestbookReady && <p className="form-error">{t('contact.setupRequired')}</p>}{guestbookStatus === 'success' && <p role="status" className="form-success">{t('contact.postSuccess')}</p>}{guestbookStatus === 'error' && <p role="alert" className="form-error">{t(guestbookReady ? 'contact.cooldown' : 'contact.setupRequired')}</p>}</form> : <form id="panel-inbox" role="tabpanel" aria-labelledby="tab-inbox" className="contact-form" onSubmit={submitInbox}><label>{t('contact.name')} *<input name="name" required maxLength={100} autoComplete="name" placeholder={t('contact.namePlaceholder')} /></label><label>{t('contact.email')} *<input type="email" name="email" required autoComplete="email" placeholder="you@example.com" /></label><label>{t('contact.message')} *<textarea name="message" required rows={4} placeholder={t('contact.messagePlaceholder')} /></label><button className="button button-dark submit-button" disabled={!inboxReady || inboxStatus === 'sending'}>{inboxStatus === 'sending' ? t('contact.sending') : `↗ ${t('contact.send')}`}</button>{!inboxReady && <p className="form-error">{t('contact.inboxOffline')} <a href={`mailto:${t('meta.email')}`}>{t('contact.emailMe')}</a></p>}{inboxStatus === 'success' && <p role="status" className="form-success">{t('contact.sendSuccess')}</p>}{inboxStatus === 'error' && <p role="alert" className="form-error">{t('contact.sendError')}</p>}</form>}
+            <motion.div className="guestbook hard-card" {...reveal}><div className="guestbook-head"><span>◉ {t('contact.guestbook')}</span><i title={t('contact.giscusLabel')} /></div><GiscusWidget language={language} /></motion.div>
+            <motion.div className="contact-panel hard-card" {...reveal}><div className="contact-panel-head">{t('contact.directInbox')}</div><form id="panel-inbox" className="contact-form" onSubmit={submitInbox}><label>{t('contact.name')} *<input name="name" required maxLength={100} autoComplete="name" placeholder={t('contact.namePlaceholder')} /></label><label>{t('contact.email')} *<input type="email" name="email" required autoComplete="email" placeholder="you@example.com" /></label><label>{t('contact.message')} *<textarea name="message" required rows={4} placeholder={t('contact.messagePlaceholder')} /></label><button className="button button-dark submit-button" disabled={!inboxReady || inboxStatus === 'sending'}>{inboxStatus === 'sending' ? t('contact.sending') : `↗ ${t('contact.send')}`}</button>{!inboxReady && <p className="form-error">{t('contact.inboxOffline')} <a href={`mailto:${t('meta.email')}`}>{t('contact.emailMe')}</a></p>}{inboxStatus === 'success' && <p role="status" className="form-success">{t('contact.sendSuccess')}</p>}{inboxStatus === 'error' && <p role="alert" className="form-error">{t('contact.sendError')}</p>}</form>
             </motion.div>
           </div>
         </section>
