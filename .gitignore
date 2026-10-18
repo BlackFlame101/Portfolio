@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+*.tsbuildinfo
+server/guestbook.sqlite*
+cv-en-private.pdf
+cv-fr-private.pdf
+.DS_Store

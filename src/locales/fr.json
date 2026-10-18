@@ -1,0 +1,171 @@
+{
+  "meta": {
+    "email": "Benouari94@gmail.com"
+  },
+  "a11y": {
+    "skip": "Aller au contenu",
+    "backToTop": "Retour en haut"
+  },
+  "language": {
+    "label": "Choisir la langue"
+  },
+  "nav": {
+    "home": "Accueil",
+    "label": "Navigation principale",
+    "menu": "Afficher ou masquer la navigation",
+    "about": "À propos",
+    "expertise": "Expertise",
+    "projects": "Projets",
+    "experience": "Parcours",
+    "contact": "Contact"
+  },
+  "hero": {
+    "year": "✦ 2026",
+    "open": "DISPONIBLE",
+    "hello": "BONJOUR — BIENVENUE SUR MON PORTFOLIO",
+    "role": "INGÉNIEUR IA & DATA SCIENCE",
+    "projects": "Voir mes projets",
+    "talk": "Me contacter",
+    "cv": "Curriculum vitæ",
+    "scroll": "DÉFILER POUR EXPLORER"
+  },
+  "about": {
+    "marquee": "À PROPOS ★ QUI SUIS-JE ★ BADR-EDDINE BENOUARI ★",
+    "title": "QUELQUES MOTS SUR MOI",
+    "p1": "Étudiant ingénieur en IA et Data Science, je m’intéresse à la création de systèmes intelligents et utiles. Mes projets associent apprentissage automatique, ingénierie des données et développement logiciel pour transformer des problèmes complexes en outils concrets.",
+    "p2": "Au fil de mes stages et projets personnels, j’ai conçu une solution de recrutement assistée par l’IA, contribué à des applications SaaS et développé Delege, un assistant WhatsApp connecté à une base de connaissances personnalisée.",
+    "location": "Maroc",
+    "languages": "Arabe · Français · Anglais · Amazigh",
+    "cv": "Télécharger mon CV",
+    "photoAlt": "Illustration originale avec mes initiales, en attendant une photo personnelle",
+    "photoMissing": "PHOTO · TODO(user)"
+  },
+  "expertise": {
+    "title": "MES OUTILS ET COMPÉTENCES",
+    "sticker": "CONSTRUIRE AVEC SENS",
+    "items": {
+      "rag": {
+        "title": "SYSTÈMES RAG & LLM",
+        "description": "Assistants appuyés sur des connaissances, la recherche vectorielle et pgvector, avec validation humaine des recommandations générées."
+      },
+      "automation": {
+        "title": "WORKFLOWS IA & AUTOMATISATION",
+        "description": "Workflows multi-étapes, pipelines d’automatisation et outils d’audit de sécurité mobile pour simplifier des processus complexes."
+      },
+      "fullstack": {
+        "title": "APPLICATIONS IA FULL-STACK",
+        "description": "Produits web modernes reliant des fonctions d’IA à des interfaces, API et services de données fiables."
+      },
+      "ml": {
+        "title": "MACHINE LEARNING & DATA",
+        "description": "Apprentissage automatique, deep learning, NLP et analyse de données en Python et avec ses bibliothèques scientifiques."
+      },
+      "backend": {
+        "title": "BACKEND & INGÉNIERIE DES DONNÉES",
+        "description": "API REST, modélisation de données, ETL et bases PostgreSQL, pgvector et MongoDB."
+      },
+      "mlops": {
+        "title": "MLOPS & DÉPLOIEMENT",
+        "description": "Services conteneurisés, gestion de versions, vérifications automatisées, Linux et workflows de déploiement cloud."
+      }
+    }
+  },
+  "projects": {
+    "title": "PROJETS SÉLECTIONNÉS",
+    "intro": "Une sélection de projets logiciels et d’applications de l’IA.",
+    "live": "Découvrir le projet",
+    "openProject": "Ouvrir le projet",
+    "externalLinkNote": "Lien fourni via LinkedIn ; à vérifier avant publication.",
+    "items": {
+      "delege": {
+        "title": "Delege",
+        "description": "Développé en environ quatre semaines, Delege connecte les entreprises du Maroc et de la région MENA à un agent IA sur WhatsApp pour gérer les conversations clients en continu. La plateforme associe un backend FastAPI et Celery avec Redis, un bridge Node.js basé sur Baileys et un pipeline de recherche Supabase/pgvector. L’agent prend en charge l’arabe, le français, la darija et l’anglais, et peut consulter les données Shopify. Un tableau de bord Next.js adaptatif rassemble la configuration de l’agent, les conversations, la base documentaire, les intégrations et les abonnements. Le projet est encore en développement initial.",
+        "delegeAlt": "Tableau de bord Delege présentant des statistiques de conversations, des échanges récents et le statut de l’agent"
+      },
+      "airwriter": {
+        "title": "AirWriter",
+        "description": "Un canevas d’écriture en l’air dans le navigateur qui transforme les gestes de la main devant la webcam en un trackpad d’écriture fluide et inversé. Un mode souris est aussi disponible. Les images de la caméra restent sur l’appareil. Dessinez, effacez, annulez, rétablissez, choisissez des couleurs, réglez les gestes et exportez l’image avec fond transparent ou caméra.",
+        "airwriterAlt": "Interface AirWriter de dessin par webcam, avec options pour démarrer la caméra ou utiliser la souris"
+      },
+      "socra": {
+        "title": "Socra",
+        "description": "Un tuteur IA socratique destiné aux étudiants universitaires. Ajoutez les PDF et notes de cours, puis progressez vers une idée grâce à des questions guidées plutôt qu’une réponse toute faite. Les réponses citent les documents fournis. Un réglage permet d’utiliser ses clés API Gemini, OpenAI ou Anthropic ; une option Gemini est également incluse par défaut. Projet de fin de cours en systèmes multi-agents à l’EMSI, réalisé avec Yasser Touil et Youssef Hachimi Alaoui.",
+        "socraAlt": "Interface du tuteur Socra guidant l’étudiant par une question sur un document de cours"
+      }
+    }
+  },
+  "experience": {
+    "title": "MON PARCOURS À CE JOUR",
+    "role": "STAGE / POSTE",
+    "education": "FORMATION",
+    "items": {
+      "mobiconnect": {
+        "title": "Stage de fin d’études",
+        "company": "Mobiconnect Technologies · Casablanca, Maroc",
+        "dates": "Juil. 2026 — Août 2026",
+        "description": "Conception d’une plateforme locale d’automatisation des audits de sécurité Android : contrôles de terminaux avec ADB, analyse d’APK via MobSF, normalisation des constats, calcul déterministe des risques et rapports HTML/PDF. Intégration de recommandations IA/RAG soumises à validation humaine, déploiement Docker et workflows n8n."
+      },
+      "netopia": {
+        "title": "Stage de projet de fin d’année",
+        "company": "Netopia Solutions · Rabat, Maroc",
+        "dates": "Juil. 2025 — Sept. 2025",
+        "description": "Conception et développement de l’interface de TalentMindHub, une plateforme SaaS de recrutement intégrant des fonctionnalités basées sur l’IA pour digitaliser et améliorer le processus de recrutement."
+      },
+      "digital": {
+        "title": "Développeur Next.js",
+        "company": "Digital Consulting Team · À distance",
+        "dates": "Oct. 2023 — Sept. 2024",
+        "description": "Participation à la migration d’une application Xamarin vers MAUI et au développement d’applications SaaS clientes avec Next.js."
+      }
+    },
+    "educationItems": {
+      "engineering": {
+        "title": "Diplôme d’ingénieur — IA & Data Science",
+        "school": "EMSI · Rabat",
+        "dates": "2024 — 2026"
+      },
+      "bachelor": {
+        "title": "Licence professionnelle — Ingénierie des applications mobiles",
+        "school": "EST · Salé",
+        "dates": "2021 — 2022"
+      },
+      "dut": {
+        "title": "DUT — Génie logiciel",
+        "school": "EST · Salé",
+        "dates": "2019 — 2021"
+      }
+    }
+  },
+  "contact": {
+    "title": "ET SI ON ÉCHANGEAIT ?",
+    "subtitle": "Une question, une idée ou juste envie de dire bonjour ? Laissez un mot ou envoyez-moi un message privé.",
+    "marquee": "DIRE BONJOUR ✦ PARTAGER UNE IDÉE ✦ RESTER EN CONTACT ✦",
+    "guestbook": "LIVRE D’OR",
+    "notes": "MESSAGES",
+    "loading": "Chargement des messages…",
+    "guestbookOffline": "Le service de livre d’or partagé est indisponible. Essayez la messagerie privée.",
+    "setupRequired": "Le livre d’or partagé n’est pas encore connecté. Les messages ne seront visibles par les autres visiteurs qu’après le déploiement de son API.",
+    "noNotes": "Pas encore de message. Soyez le premier à écrire.",
+    "connected": "Livre d’or partagé connecté",
+    "tabs": "Options de contact",
+    "leaveNote": "Laisser un mot",
+    "directInbox": "Message privé",
+    "name": "Votre nom",
+    "namePlaceholder": "Votre nom",
+    "note": "Votre message",
+    "notePlaceholder": "Écrivez un petit mot…",
+    "postNote": "Publier",
+    "posting": "Envoi…",
+    "postSuccess": "Votre message a été publié pour tous les visiteurs.",
+    "cooldown": "Veuillez patienter 30 secondes avant d’envoyer un autre message.",
+    "email": "Adresse e-mail",
+    "message": "Message",
+    "messagePlaceholder": "Comment puis-je vous aider ?",
+    "send": "Envoyer le message",
+    "sendSuccess": "Votre message a été envoyé. Merci !",
+    "sendError": "Une erreur est survenue. Veuillez réessayer.",
+    "inboxOffline": "La messagerie privée n’est pas encore configurée. Vous pouvez m’écrire par e-mail.",
+    "emailMe": "M’écrire",
+    "sending": "Envoi du message…"
+  }
+}
