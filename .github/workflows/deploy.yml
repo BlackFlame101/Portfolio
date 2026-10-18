@@ -30,7 +30,7 @@ jobs:
       - name: Build site
         run: npm run build
         env:
-          VITE_BASE: /
+          VITE_BASE: /Portfolio/
           VITE_GUESTBOOK_API_URL: ${{ vars.VITE_GUESTBOOK_API_URL }}
           VITE_FORMSPREE_ID: ${{ vars.VITE_FORMSPREE_ID }}
       - name: Configure Pages
