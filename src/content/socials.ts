@@ -1,4 +1,4 @@
 export const socials = [
   { label: 'GitHub', url: 'https://github.com/BlackFlame101' },
-  // TODO(user): provide the LinkedIn profile URL before displaying its link.
+  { label: 'LinkedIn', url: 'https://www.linkedin.com/in/badr-eddine-benouari-0b6455198/' },
 ] as const
