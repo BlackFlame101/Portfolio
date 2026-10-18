@@ -75,7 +75,7 @@
     "intro": "Une sélection de projets logiciels et d’applications de l’IA.",
     "live": "Découvrir le projet",
     "openProject": "Ouvrir le projet",
-    "externalLinkNote": "Lien fourni via LinkedIn ; à vérifier avant publication.",
+    "externalLinkNote": "Dépôt GitHub disponible ; démo en ligne actuellement indisponible.",
     "items": {
       "delege": {
         "title": "Delege",
@@ -92,7 +92,8 @@
         "description": "Un tuteur IA socratique destiné aux étudiants universitaires. Ajoutez les PDF et notes de cours, puis progressez vers une idée grâce à des questions guidées plutôt qu’une réponse toute faite. Les réponses citent les documents fournis. Un réglage permet d’utiliser ses clés API Gemini, OpenAI ou Anthropic ; une option Gemini est également incluse par défaut. Projet de fin de cours en systèmes multi-agents à l’EMSI, réalisé avec Yasser Touil et Youssef Hachimi Alaoui.",
         "socraAlt": "Interface du tuteur Socra guidant l’étudiant par une question sur un document de cours"
       }
-    }
+    },
+    "shipping": "D’AUTRES PROJETS SONT EN PRÉPARATION"
   },
   "experience": {
     "title": "MON PARCOURS À CE JOUR",

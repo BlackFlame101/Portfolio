@@ -1,12 +1,172 @@
 {
-  "meta": { "email": "Benouari94@gmail.com" },
-  "a11y": { "skip": "Skip to content", "backToTop": "Back to top" },
-  "language": { "label": "Choose language" },
-  "nav": { "home": "Home", "label": "Main navigation", "menu": "Toggle navigation", "about": "About", "expertise": "Expertise", "projects": "Projects", "experience": "Experience", "contact": "Contact" },
-  "hero": { "year": "✦ 2026", "open": "AVAILABLE", "hello": "HELLO WORLD — WELCOME TO MY PORTFOLIO", "role": "AI & DATA SCIENCE ENGINEER", "projects": "Explore projects", "talk": "Get in touch", "cv": "Curriculum vitae", "scroll": "SCROLL TO EXPLORE" },
-  "about": { "marquee": "ABOUT ME ★ WHO I AM ★ BADR-EDDINE BENOUARI ★", "title": "A LITTLE ABOUT ME", "p1": "I am an AI and Data Science engineering student drawn to building useful, intelligent systems. My work brings together machine learning, data engineering, and software development to turn complex problems into practical tools.", "p2": "Across my internships and personal work, I have designed AI assisted recruitment software, contributed to SaaS applications, and built Delege, a WhatsApp connected assistant grounded in a custom knowledge base.", "location": "Morocco", "languages": "Arabic · French · English · Amazigh", "cv": "Download my CV", "photoAlt": "Original illustrated initials badge because no personal photo was provided", "photoMissing": "PHOTO · TODO(user)" },
-  "expertise": { "title": "TOOLS I WORK WITH", "sticker": "BUILDING WITH PURPOSE", "items": { "rag": { "title": "RAG & LLM SYSTEMS", "description": "Knowledge grounded assistants using retrieval, embeddings, and pgvector, with human review for generated recommendations." }, "automation": { "title": "AI WORKFLOWS & AUTOMATION", "description": "Multi step workflows, automation pipelines, and mobile security audit tools built to make complex processes easier to run." }, "fullstack": { "title": "FULL-STACK AI APPLICATIONS", "description": "Modern web products that connect AI capabilities with reliable interfaces, APIs, and data services." }, "ml": { "title": "MACHINE LEARNING & DATA", "description": "Python based machine learning, deep learning, NLP, and analysis with the core scientific Python stack." }, "backend": { "title": "BACKEND & DATA ENGINEERING", "description": "REST APIs, data modelling, ETL, and database work across PostgreSQL, pgvector, and MongoDB." }, "mlops": { "title": "MLOPS & DEPLOYMENT", "description": "Containerized services, version control, automated checks, Linux, and cloud deployment workflows." } } },
-  "projects": { "title": "SELECTED PROJECTS", "intro": "A selection of software and applied AI work.", "live": "Try it live", "openProject": "Open project", "externalLinkNote": "Link provided via LinkedIn; verify before publishing.", "items": { "delege": { "title": "Delege", "description": "Built in roughly four weeks, Delege connects Moroccan and MENA businesses to a WhatsApp AI agent for around the clock customer conversations. Its stack combines a FastAPI and Celery backend with Redis, a Node.js Baileys bridge, and a Supabase/pgvector retrieval pipeline. The agent supports Arabic, French, Darija, and English; it can also use Shopify data. A responsive Next.js dashboard includes agent configuration, conversations, knowledge files, integrations, and subscription tools. Early development.", "delegeAlt": "Delege dashboard showing conversation metrics, recent chats, and agent status" }, "airwriter": { "title": "AirWriter", "description": "A browser based air writing canvas that turns webcam hand gestures into a smooth, mirrored writing trackpad, with mouse mode as an alternative. Camera frames stay on the device. Draw, erase, undo, redo, choose colors, tune the gesture controls, and export images with a transparent or camera background.", "airwriterAlt": "AirWriter webcam drawing interface with the camera start and mouse mode options" }, "socra": { "title": "Socra", "description": "A Socratic AI tutor for university students. Add course PDFs and notes, then work toward an insight through guided questions rather than receiving a direct answer. Responses cite the supplied course material. A bring your own API key setting supports Gemini, OpenAI, and Anthropic; the app also includes a default Gemini option. Built as a Multi-Agent Systems course capstone at EMSI with Yasser Touil and Youssef Hachimi Alaoui.", "socraAlt": "Socra Socratic study companion interface with a guided question about course material" } } },
-  "experience": { "title": "MY PATH SO FAR", "role": "INTERNSHIP / ROLE", "education": "EDUCATION", "items": { "mobiconnect": { "title": "End-of-Studies Intern", "company": "Mobiconnect Technologies · Casablanca, Morocco", "dates": "Jul 2026 — Aug 2026", "description": "Built a local Android security audit automation platform combining ADB device checks, MobSF APK analysis, normalized findings, deterministic risk scoring, HTML/PDF reports, and human reviewed AI/RAG remediation. The solution included Docker deployment and n8n workflows." }, "netopia": { "title": "End-of-Year Project Intern", "company": "Netopia Solutions · Rabat, Morocco", "dates": "Jul 2025 — Sep 2025", "description": "Designed and developed the interface for TalentMindHub, an AI enabled SaaS recruitment platform intended to digitize and improve the recruitment process." }, "digital": { "title": "Next.js Developer", "company": "Digital Consulting Team · Remote", "dates": "Oct 2023 — Sep 2024", "description": "Contributed to a Xamarin to MAUI application migration and to the development of client SaaS applications using Next.js." } }, "educationItems": { "engineering": { "title": "Engineering Diploma — AI & Data Science", "school": "EMSI · Rabat", "dates": "2024 — 2026" }, "bachelor": { "title": "Professional Bachelor — Mobile Applications Engineering", "school": "EST · Salé", "dates": "2021 — 2022" }, "dut": { "title": "DUT — Software Engineering", "school": "EST · Salé", "dates": "2019 — 2021" } } },
-  "contact": { "title": "LET'S BUILD A CONVERSATION", "subtitle": "Have a question, an idea, or just want to say hello? Leave a note or send a private message.", "marquee": "SAY HELLO ✦ SHARE AN IDEA ✦ LET'S CONNECT ✦", "guestbook": "GUESTBOOK", "notes": "NOTES", "loading": "Loading notes…", "guestbookOffline": "The shared guestbook service is unavailable. Please try the Direct Inbox.", "setupRequired": "Shared guestbook is not connected yet. Notes cannot be seen by other visitors until its API is deployed.", "noNotes": "No notes yet. You can leave the first one.", "connected": "Shared guestbook connected", "tabs": "Contact options", "leaveNote": "Leave a note", "directInbox": "Direct inbox", "name": "Your name", "namePlaceholder": "Your name", "note": "Your note", "notePlaceholder": "Write a short note…", "postNote": "Post note", "posting": "Posting…", "postSuccess": "Your note was posted for everyone to see.", "cooldown": "Please wait 30 seconds before posting another note.", "email": "Email address", "message": "Message", "messagePlaceholder": "How can I help?", "send": "Send message", "sending": "Sending…", "sendSuccess": "Your message has been sent. Thank you!", "sendError": "Something went wrong. Please try again.", "inboxOffline": "Direct inbox setup is pending. Please email me directly.", "emailMe": "Email me" }
+  "meta": {
+    "email": "Benouari94@gmail.com"
+  },
+  "a11y": {
+    "skip": "Skip to content",
+    "backToTop": "Back to top"
+  },
+  "language": {
+    "label": "Choose language"
+  },
+  "nav": {
+    "home": "Home",
+    "label": "Main navigation",
+    "menu": "Toggle navigation",
+    "about": "About",
+    "expertise": "Expertise",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "hero": {
+    "year": "✦ 2026",
+    "open": "AVAILABLE",
+    "hello": "HELLO WORLD — WELCOME TO MY PORTFOLIO",
+    "role": "AI & DATA SCIENCE ENGINEER",
+    "projects": "Explore projects",
+    "talk": "Get in touch",
+    "cv": "Curriculum vitae",
+    "scroll": "SCROLL TO EXPLORE"
+  },
+  "about": {
+    "marquee": "ABOUT ME ★ WHO I AM ★ BADR-EDDINE BENOUARI ★",
+    "title": "A LITTLE ABOUT ME",
+    "p1": "I am an AI and Data Science engineering student drawn to building useful, intelligent systems. My work brings together machine learning, data engineering, and software development to turn complex problems into practical tools.",
+    "p2": "Across my internships and personal work, I have designed AI assisted recruitment software, contributed to SaaS applications, and built Delege, a WhatsApp connected assistant grounded in a custom knowledge base.",
+    "location": "Morocco",
+    "languages": "Arabic · French · English · Amazigh",
+    "cv": "Download my CV",
+    "photoAlt": "Original illustrated initials badge because no personal photo was provided",
+    "photoMissing": "PHOTO · TODO(user)"
+  },
+  "expertise": {
+    "title": "TOOLS I WORK WITH",
+    "sticker": "BUILDING WITH PURPOSE",
+    "items": {
+      "rag": {
+        "title": "RAG & LLM SYSTEMS",
+        "description": "Knowledge grounded assistants using retrieval, embeddings, and pgvector, with human review for generated recommendations."
+      },
+      "automation": {
+        "title": "AI WORKFLOWS & AUTOMATION",
+        "description": "Multi step workflows, automation pipelines, and mobile security audit tools built to make complex processes easier to run."
+      },
+      "fullstack": {
+        "title": "FULL-STACK AI APPLICATIONS",
+        "description": "Modern web products that connect AI capabilities with reliable interfaces, APIs, and data services."
+      },
+      "ml": {
+        "title": "MACHINE LEARNING & DATA",
+        "description": "Python based machine learning, deep learning, NLP, and analysis with the core scientific Python stack."
+      },
+      "backend": {
+        "title": "BACKEND & DATA ENGINEERING",
+        "description": "REST APIs, data modelling, ETL, and database work across PostgreSQL, pgvector, and MongoDB."
+      },
+      "mlops": {
+        "title": "MLOPS & DEPLOYMENT",
+        "description": "Containerized services, version control, automated checks, Linux, and cloud deployment workflows."
+      }
+    }
+  },
+  "projects": {
+    "title": "SELECTED PROJECTS",
+    "intro": "A selection of software and applied AI work.",
+    "live": "Try it live",
+    "openProject": "Open project",
+    "externalLinkNote": "GitHub repository available; live demo currently offline.",
+    "items": {
+      "delege": {
+        "title": "Delege",
+        "description": "Built in roughly four weeks, Delege connects Moroccan and MENA businesses to a WhatsApp AI agent for around the clock customer conversations. Its stack combines a FastAPI and Celery backend with Redis, a Node.js Baileys bridge, and a Supabase/pgvector retrieval pipeline. The agent supports Arabic, French, Darija, and English; it can also use Shopify data. A responsive Next.js dashboard includes agent configuration, conversations, knowledge files, integrations, and subscription tools. Early development.",
+        "delegeAlt": "Delege dashboard showing conversation metrics, recent chats, and agent status"
+      },
+      "airwriter": {
+        "title": "AirWriter",
+        "description": "A browser based air writing canvas that turns webcam hand gestures into a smooth, mirrored writing trackpad, with mouse mode as an alternative. Camera frames stay on the device. Draw, erase, undo, redo, choose colors, tune the gesture controls, and export images with a transparent or camera background.",
+        "airwriterAlt": "AirWriter webcam drawing interface with the camera start and mouse mode options"
+      },
+      "socra": {
+        "title": "Socra",
+        "description": "A Socratic AI tutor for university students. Add course PDFs and notes, then work toward an insight through guided questions rather than receiving a direct answer. Responses cite the supplied course material. A bring your own API key setting supports Gemini, OpenAI, and Anthropic; the app also includes a default Gemini option. Built as a Multi-Agent Systems course capstone at EMSI with Yasser Touil and Youssef Hachimi Alaoui.",
+        "socraAlt": "Socra Socratic study companion interface with a guided question about course material"
+      }
+    },
+    "shipping": "MORE PROJECTS IN THE WORKS"
+  },
+  "experience": {
+    "title": "MY PATH SO FAR",
+    "role": "INTERNSHIP / ROLE",
+    "education": "EDUCATION",
+    "items": {
+      "mobiconnect": {
+        "title": "End-of-Studies Intern",
+        "company": "Mobiconnect Technologies · Casablanca, Morocco",
+        "dates": "Jul 2026 — Aug 2026",
+        "description": "Built a local Android security audit automation platform combining ADB device checks, MobSF APK analysis, normalized findings, deterministic risk scoring, HTML/PDF reports, and human reviewed AI/RAG remediation. The solution included Docker deployment and n8n workflows."
+      },
+      "netopia": {
+        "title": "End-of-Year Project Intern",
+        "company": "Netopia Solutions · Rabat, Morocco",
+        "dates": "Jul 2025 — Sep 2025",
+        "description": "Designed and developed the interface for TalentMindHub, an AI enabled SaaS recruitment platform intended to digitize and improve the recruitment process."
+      },
+      "digital": {
+        "title": "Next.js Developer",
+        "company": "Digital Consulting Team · Remote",
+        "dates": "Oct 2023 — Sep 2024",
+        "description": "Contributed to a Xamarin to MAUI application migration and to the development of client SaaS applications using Next.js."
+      }
+    },
+    "educationItems": {
+      "engineering": {
+        "title": "Engineering Diploma — AI & Data Science",
+        "school": "EMSI · Rabat",
+        "dates": "2024 — 2026"
+      },
+      "bachelor": {
+        "title": "Professional Bachelor — Mobile Applications Engineering",
+        "school": "EST · Salé",
+        "dates": "2021 — 2022"
+      },
+      "dut": {
+        "title": "DUT — Software Engineering",
+        "school": "EST · Salé",
+        "dates": "2019 — 2021"
+      }
+    }
+  },
+  "contact": {
+    "title": "LET'S BUILD A CONVERSATION",
+    "subtitle": "Have a question, an idea, or just want to say hello? Leave a note or send a private message.",
+    "marquee": "SAY HELLO ✦ SHARE AN IDEA ✦ LET'S CONNECT ✦",
+    "guestbook": "GUESTBOOK",
+    "notes": "NOTES",
+    "loading": "Loading notes…",
+    "guestbookOffline": "The shared guestbook service is unavailable. Please try the Direct Inbox.",
+    "setupRequired": "Shared guestbook is not connected yet. Notes cannot be seen by other visitors until its API is deployed.",
+    "noNotes": "No notes yet. You can leave the first one.",
+    "connected": "Shared guestbook connected",
+    "tabs": "Contact options",
+    "leaveNote": "Leave a note",
+    "directInbox": "Direct inbox",
+    "name": "Your name",
+    "namePlaceholder": "Your name",
+    "note": "Your note",
+    "notePlaceholder": "Write a short note…",
+    "postNote": "Post note",
+    "posting": "Posting…",
+    "postSuccess": "Your note was posted for everyone to see.",
+    "cooldown": "Please wait 30 seconds before posting another note.",
+    "email": "Email address",
+    "message": "Message",
+    "messagePlaceholder": "How can I help?",
+    "send": "Send message",
+    "sending": "Sending…",
+    "sendSuccess": "Your message has been sent. Thank you!",
+    "sendError": "Something went wrong. Please try again.",
+    "inboxOffline": "Direct inbox setup is pending. Please email me directly.",
+    "emailMe": "Email me"
+  }
 }
