@@ -68,7 +68,7 @@ function App() {
       <a className="skip-link" href="#main">{t('a11y.skip')}</a>
       <header className="site-header">
         <div className="header-inner wrap">
-          <a href="#home" className="brand" aria-label={t('nav.home')}>BADR<span>®</span></a>
+          <a href="#home" className="brand" aria-label={t('nav.home')}>PORTFOLIO<span>®</span></a>
           <nav className="desktop-nav" aria-label={t('nav.label')}>{nav()}</nav>
           <div className="header-actions">
             <div className="language-toggle" aria-label={t('language.label')}>
@@ -136,7 +136,7 @@ function App() {
         </section>
       </main>
 
-      <footer className="site-footer"><div className="wrap footer-inner"><a href="#home" className="brand">BADR<span>®</span></a><div>{socials.map((social) => <a key={social.label} href={social.url} target="_blank" rel="noopener noreferrer">{social.label}</a>)}<a href={`mailto:${t('meta.email')}`}>{t('contact.emailMe')}</a></div><small>© {new Date().getFullYear()} BADR-EDDINE BENOUARI</small></div></footer>
+      <footer className="site-footer"><div className="wrap footer-inner"><a href="#home" className="brand" aria-label={t('nav.home')}>PORTFOLIO<span>®</span></a><div>{socials.map((social) => <a key={social.label} href={social.url} target="_blank" rel="noopener noreferrer">{social.label}</a>)}<a href={`mailto:${t('meta.email')}`}>{t('contact.emailMe')}</a></div><small>© {new Date().getFullYear()} BADR-EDDINE BENOUARI</small></div></footer>
       <AnimatePresence>{showTop && <motion.a className="back-to-top" href="#home" aria-label={t('a11y.backToTop')} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 8 }}>↑</motion.a>}</AnimatePresence>
     </>
   )
